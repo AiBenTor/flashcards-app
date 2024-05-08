@@ -1,0 +1,10 @@
+@use 'index';
+
+header {
+  align-items: center;
+  background-color: index.$primary-color;
+  display: flex;
+  height: 10vh;
+  justify-content: flex-end;
+  padding-inline: 30px;
+}
