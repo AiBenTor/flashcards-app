@@ -14,5 +14,32 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    quotes: [
+      'error',
+      'single'
+    ],
+    semi: [
+      'error',
+      'never'
+    ],
+    'array-bracket-spacing': [
+      'error',
+      'always'
+    ],
+    'object-curly-spacing': [
+      'error',
+      'always'
+    ],
+    'computed-property-spacing': [
+      'error',
+      'always'
+    ],
+    'no-multiple-empty-lines': [
+      'error',
+      {
+        'max': 2,
+        'maxEOF': 0
+      }
+    ]
   },
 }
