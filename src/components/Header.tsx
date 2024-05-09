@@ -1,4 +1,5 @@
 import { Button, Stack } from '@mui/material'
+import '../styles/header.scss'
 
 export const Header = () => {
   return (

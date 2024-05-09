@@ -1,8 +1,8 @@
-@use 'index';
+@use 'base';
 
 header {
   align-items: center;
-  background-color: index.$primary-color;
+  background-color: base.$primary-color;
   display: flex;
   height: 10vh;
   justify-content: flex-end;
