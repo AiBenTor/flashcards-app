@@ -8,7 +8,7 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
 import App from './App.tsx'
-import './styles/_base.scss'
+import '@/styles/_base.scss'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
