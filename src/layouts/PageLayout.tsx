@@ -1,3 +1,4 @@
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import '@/styles/pageLayout.scss'
 
@@ -12,6 +13,7 @@ export const PageLayout: React.FC<Props> = ({ children = <></> }) => {
       <main className='main--page'>
         {children}
       </main>
+      <Footer />
     </>
   )
 }
