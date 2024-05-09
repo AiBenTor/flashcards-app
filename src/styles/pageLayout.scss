@@ -1,0 +1,9 @@
+@use 'palette.module';
+
+.main--page {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}

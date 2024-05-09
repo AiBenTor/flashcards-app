@@ -1,9 +1,12 @@
-import { Header } from './components/Header'
+import { PageLayout } from '@/layouts/PageLayout'
+import { HomePage } from '@/pages/HomePage'
 
 function App() {
   return (
     <>
-      <Header />
+      <PageLayout>
+        <HomePage />
+      </PageLayout>
     </>
   )
 }
