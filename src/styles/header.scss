@@ -1,8 +1,8 @@
-@use 'base';
+@use 'palette.module';
 
-header {
+.header {
   align-items: center;
-  background-color: base.$primary-color;
+  background-color: palette.$primary;
   display: flex;
   height: 10vh;
   justify-content: flex-end;

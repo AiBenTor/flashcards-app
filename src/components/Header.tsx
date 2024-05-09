@@ -1,12 +1,13 @@
-import { Button, Stack } from '@mui/material'
+import { Stack } from '@mui/material'
+import { HeaderButton } from './HeaderButton'
 import '@/styles/header.scss'
 
 export const Header = () => {
   return (
-    <header>
+    <header className="header">
       <Stack direction="row" spacing={2}>
-        <Button href="#">Home</Button>
-        <Button href="#">My Decks</Button>
+        <HeaderButton url='#' text='Home' />
+        <HeaderButton url='#' text='My Decks' />
       </Stack>
     </header>
   )
