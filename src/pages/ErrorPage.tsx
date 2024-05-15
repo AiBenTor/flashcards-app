@@ -4,7 +4,7 @@ export const ErrorPage = () => {
   const { errorMessage } = useErrorPage()
 
   return (
-    <div id="error-page">
+    <div id="error-page" test-id="error-page">
       <h1>Oops!</h1>
       <p>Sorry, an expected error has occured.</p>
       <p>

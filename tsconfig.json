@@ -30,9 +30,10 @@
       "@/layouts": ["src/layouts/*"],
       "@/pages": ["src/pages/*"],
       "@/routes": ["src/routes/*"],
-      "@/styles": ["src/styles/*"]
+      "@/styles": ["src/styles/*"],
+      "@/utils": ["src/utils/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

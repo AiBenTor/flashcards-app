@@ -3,7 +3,7 @@ import { HomePage } from '@/pages/HomePage'
 import { DecksPage } from '@/pages/DecksPage'
 import { PageLayout } from '@/layouts/PageLayout'
 
-export const router = createBrowserRouter([
+export const routesConfig = [
   {
     path: '/',
     element: <PageLayout />,
@@ -16,4 +16,6 @@ export const router = createBrowserRouter([
       },
     ],
   },
-])
+]
+
+export const router = createBrowserRouter(routesConfig)
