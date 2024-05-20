@@ -1,10 +1,20 @@
 $primary: #2196f3;
 $secondary: #1976d2;
-$base-light: #e3f2fd;
 
+// Variables for CSS (Sass) code
+$color__base-light: #e3f2fd;
+$color__black: #0b0c10;
+$color__gray-dark: #1f2833;
+$color__gray-light: #c5c6c7;
+$color__blue-light: #66fcf1;
+$color__blue-dark: #45a29e;
 
+// Export for TypeScript code
 :export {
-  primary: $primary;
-  secondary: $secondary;
-  base-light: $base-light;
+  black: $color__black;
+  grayDark: $color__gray-dark;
+  grayLight: $color__gray-light;
+  blueLight: $color__blue-light;
+  blueDark: $color__blue-dark;
+  baseLight: $color__base-light;
 }

@@ -1,8 +1,12 @@
 @use 'palette.module';
 
 body {
-  background-color: palette.$base-light;
+  background-color: palette.$color__base-light;
   font-family: 'Roboto';
   height: 100%;
   margin: 0;
+
+  &.dark {
+    background-color: palette.$color__black;
+  }
 }

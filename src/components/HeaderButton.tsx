@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button, styled } from '@mui/material'
-import palette from '@/styles/palette.module.scss'
+import { useColor } from '@/hooks/useColor'
 
 interface Props {
   text: string
@@ -8,10 +8,11 @@ interface Props {
 }
 
 export const HeaderButton: React.FC<Props> = ({ text, url }) => {
+  const { color } = useColor()
   const CustomButton = styled(Button)({
-    color: 'white',
+    color: color.black,
     '&:hover': {
-      backgroundColor: palette.secondary,
+      backgroundColor: color.blueDark,
     },
   })
 
