@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom'
+import { ReactNode } from 'react'
 import { Button, styled } from '@mui/material'
 import { COLOR } from '@/utils/consts'
 
 interface Props {
-  text: string
-  url: string
+  children?: ReactNode
+  text?: string
+  handleClick?: () => void
 }
 
-export const HeaderButton: React.FC<Props> = ({ text, url }) => {
+export const HeaderButton: React.FC<Props> = ({ children, text = '', handleClick }) => {
   const CustomButton = styled(Button)({
     color: COLOR.BLACK,
     '&:hover': {
@@ -15,9 +16,5 @@ export const HeaderButton: React.FC<Props> = ({ text, url }) => {
     },
   })
 
-  return (
-    <Link to={url}>
-      <CustomButton>{text}</CustomButton>
-    </Link>
-  )
+  return <CustomButton onClick={handleClick}>{children || text}</CustomButton>
 }
