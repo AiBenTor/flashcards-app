@@ -6,12 +6,12 @@ import '@/styles/pageLayout.scss'
 
 export const PageLayout = ({ isError = false }) => {
   return (
-    <>
+    <div id='app' className='app'>
       <Header />
       <main className='main--page'>
         {isError ? <ErrorPage /> : <Outlet />}
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
