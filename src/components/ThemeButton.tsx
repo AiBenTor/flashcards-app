@@ -1,5 +1,4 @@
-import DarkMode from '@mui/icons-material/DarkMode'
-import LightMode from '@mui/icons-material/LightMode'
+import { DarkMode, LightMode } from '@mui/icons-material'
 import { HeaderButton } from './HeaderButton'
 
 interface Props {

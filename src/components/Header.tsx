@@ -1,8 +1,8 @@
 import { Stack } from '@mui/material'
-import '@/styles/header.scss'
+import { useTheme } from '@/hooks/useTheme'
 import { LinkButton } from './LinkButton'
 import { ThemeButton } from './ThemeButton'
-import { useTheme } from '@/hooks/useTheme'
+import '@/styles/header.scss'
 
 export const Header = () => {
   const { theme, setDarkTheme, setLightTheme } = useTheme()
