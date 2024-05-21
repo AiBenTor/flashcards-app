@@ -2,12 +2,12 @@
 
 %header-shared {
   align-items: center;
-  display: flex;
   backdrop-filter: blur(4px);
-  height: 10vh;
+  box-shadow: 0 0 5px 0;
+  display: flex;
+  height: 80px;
   justify-content: flex-end;
   padding-inline: 30px;
-  box-shadow: 0 0 5px 0;
 }
 
 .header {

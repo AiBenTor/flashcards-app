@@ -19,14 +19,20 @@ export const useTheme = () => {
     const lightTheme = 'light'
     setTheme(lightTheme)
     localStorage.setItem('theme', lightTheme)
+
+    // Change Styles
     document.getElementById('app')?.classList.remove('dark')
+    document.body.classList.remove('dark')
   }
 
   const setDarkTheme = () => {
     const darkTheme = 'dark'
     setTheme(darkTheme)
     localStorage.setItem('theme', darkTheme)
+
+    // Change Styles
     document.getElementById('app')?.classList.add('dark')
+    document.body.classList.add('dark')
   }
 
   return {

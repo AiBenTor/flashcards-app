@@ -1,10 +1,15 @@
 @use 'palette.module';
 
 body {
+  background-color: palette.$color__base-light;
   display: flex;
   margin: 0;
   min-height: 100vh;
   min-width: 320px;
+
+  &.dark {
+    background-color: palette.$color__gray-dark;
+  }
 }
 
 #root {
