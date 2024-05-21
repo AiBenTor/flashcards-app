@@ -4,12 +4,13 @@ import { HeaderButton } from './HeaderButton'
 interface Props {
   text: string
   url: string
+  theme?: 'light' | 'dark'
 }
 
-export const LinkButton: React.FC<Props> = ({ text, url }) => {
+export const LinkButton: React.FC<Props> = ({ text, url, theme = 'light' }) => {
   return (
     <Link to={url}>
-      <HeaderButton text={text} />
+      <HeaderButton text={text} theme={theme} />
     </Link>
   )
 }

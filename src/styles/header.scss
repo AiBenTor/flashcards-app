@@ -1,16 +1,21 @@
 @use 'palette.module';
 
-.header {
+%header-shared {
   align-items: center;
-  background-color: palette.$color__blue-light;
   display: flex;
   backdrop-filter: blur(4px);
   height: 10vh;
   justify-content: flex-end;
   padding-inline: 30px;
   box-shadow: 0 0 5px 0;
+}
 
-  &.dark {
-    background-color: palette.$color__black;
-  }
+.header {
+  @extend %header-shared;
+  background-color: palette.$color__blue-light;
+}
+
+.dark .header {
+  @extend %header-shared;
+  background-color: palette.$color__black;
 }

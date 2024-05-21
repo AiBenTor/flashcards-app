@@ -3,7 +3,9 @@ import { router } from '@/routes/router'
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div id='app' className='app'>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 

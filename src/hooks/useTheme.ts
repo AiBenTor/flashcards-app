@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 
 export const useTheme = () => {
-  const [ theme, setTheme ] = useState('light')
+  const [ theme, setTheme ] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     if (typeof localStorage !== 'undefined' && localStorage.getItem('theme') !== null) {
-      setTheme(localStorage.getItem('theme') as string)
+      if (localStorage.getItem('theme') === 'light') {
+        setLightTheme()
+      } else {
+        setDarkTheme()
+      }
     } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkTheme()
     }
@@ -15,14 +19,14 @@ export const useTheme = () => {
     const lightTheme = 'light'
     setTheme(lightTheme)
     localStorage.setItem('theme', lightTheme)
-    document.documentElement.classList.remove('dark')
+    document.getElementById('app')?.classList.remove('dark')
   }
 
   const setDarkTheme = () => {
     const darkTheme = 'dark'
     setTheme(darkTheme)
     localStorage.setItem('theme', darkTheme)
-    document.documentElement.classList.add('dark')
+    document.getElementById('app')?.classList.add('dark')
   }
 
   return {

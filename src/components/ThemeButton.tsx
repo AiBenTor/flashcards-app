@@ -1,21 +1,16 @@
-import { DarkMode, LightMode } from '@mui/icons-material'
+import DarkMode from '@mui/icons-material/DarkMode'
+import LightMode from '@mui/icons-material/LightMode'
 import { HeaderButton } from './HeaderButton'
-import { useTheme } from '@/hooks/useTheme'
 
-export const ThemeButton = () => {
-  const { theme, setLightTheme, setDarkTheme } = useTheme()
+interface Props {
+  theme?: 'light' | 'dark'
+  handleClick: () => void
+}
 
-  const handleClick = () => {
-    if (theme === 'light') {
-      setDarkTheme()
-    } else {
-      setLightTheme()
-    }
-  }
-
+export const ThemeButton: React.FC<Props> = ({ theme = 'light', handleClick }) => {
   return (
-    <HeaderButton handleClick={handleClick}>
-      { theme === 'light' ? <LightMode /> : <DarkMode />}
+    <HeaderButton theme={theme} handleClick={handleClick}>
+      {theme === 'light' ? <DarkMode /> : <LightMode />}
     </HeaderButton>
   )
 }

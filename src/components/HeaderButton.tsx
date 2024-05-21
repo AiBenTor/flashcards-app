@@ -5,14 +5,15 @@ import { COLOR } from '@/utils/consts'
 interface Props {
   children?: ReactNode
   text?: string
+  theme: 'light' | 'dark'
   handleClick?: () => void
 }
 
-export const HeaderButton: React.FC<Props> = ({ children, text = '', handleClick }) => {
+export const HeaderButton: React.FC<Props> = ({ children, text = '', theme, handleClick }) => {
   const CustomButton = styled(Button)({
-    color: COLOR.BLACK,
+    color: theme === 'light' ? COLOR.BLACK : COLOR.BLUE_LIGHT,
     '&:hover': {
-      backgroundColor: COLOR.BLUE_DARK,
+      backgroundColor: theme === 'light' ? COLOR.BLUE_DARK : COLOR.GRAY_DARK,
     },
   })
 
