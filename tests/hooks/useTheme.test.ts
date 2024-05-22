@@ -24,6 +24,7 @@ describe('useTheme testing', () => {
     act(() => result.current.setDarkTheme())
 
     expect(result.current.theme).toBe('dark')
+    expect(localStorage.getItem('theme')).toBe('dark')
   })
 
   test('should set light theme', () => {
@@ -33,5 +34,6 @@ describe('useTheme testing', () => {
     act(() => result.current.setLightTheme())
 
     expect(result.current.theme).toBe('light')
+    expect(localStorage.getItem('theme')).toBe('light')
   })
 })
