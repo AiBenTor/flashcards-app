@@ -1,5 +1,7 @@
-import { Delete } from '@mui/icons-material'
-import { Card, CardActionArea, CardContent, CardHeader, IconButton, Typography } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Card, CardContent, CardHeader, Typography } from '@mui/material'
+import { DeleteButton } from './DeleteButton'
+import { COLOR } from '@/utils/consts'
 
 interface Props {
   title: string
@@ -10,65 +12,22 @@ interface Props {
 }
 
 export const Deck: React.FC<Props> = ({ title, description, newCards, learningCards, scheduledCards }) => {
-  return (
-    <>
-      {/* <div
-        style={{
-          position: 'absolute',
-          display: 'flex',
-          justifyContent: 'flex-end',
-          width: 350,
-        }}
-      >
-        <IconButton
-          sx={{
-            marginRight: 3,
-            marginTop: 3,
-            zIndex: 100,
-          }}
-          onClick={() => {
-            console.log('DELETE DECK')
-          }}
-        >
-          <Delete />
-        </IconButton>
-      </div> */}
+  const titleShort = `${title.substring(0, 20)}${title.length > 20 ? '...' : ''}`
+  const descriptionShort = `${description.substring(0, 65)}${description.length > 66 ? '...' : ''}`
 
-      <Card sx={{ height: 225, width: 350 }}>
-        <CardActionArea sx={{ height: '100%', padding: 2 }}>
-          <CardHeader
-            sx={{ height: '20%' }}
-            title={`${title.substring(0, 20)}${title.length > 20 ? '...' : ''}`}
-            action={
-              <IconButton
-                onTouchStart={(event) => event.stopPropagation()}
-                onMouseDown={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation()
-                  event.preventDefault()
-                  console.log('DELETE DECK')
-                }}
-              >
-                <Delete />
-              </IconButton>
-            }
-          />
-          <CardContent sx={{ height: '80%' }}>
-            <Typography
-              variant="body1"
-              color="text.secondary"
-              overflow="hidden"
-              textOverflow="ellipsis"
-              sx={{ height: '30%', mb: 2 }}
-            >
-              {`${description.substring(0, 65)}${description.length > 66 ? '...' : ''}`}
-            </Typography>
-            <Typography variant="body2" sx={{ height: 30 }}>
-              {newCards} | {learningCards} | {scheduledCards}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    </>
+  return (
+    <Card sx={{ height: 175, width: 350, padding: '5%' }}>
+      <Link to={'/'} style={{ color: COLOR.BLUE_DARK, textDecoration: 'none' }}>
+        <CardHeader title={titleShort} action={<DeleteButton />} />
+        <CardContent>
+          <Typography variant="body1" color="text.secondary" overflow="hidden" textOverflow="ellipsis" sx={{ mb: 2 }}>
+            {descriptionShort}
+          </Typography>
+          <Typography variant="body2" sx={{ height: 30 }}>
+            {newCards} | {learningCards} | {scheduledCards}
+          </Typography>
+        </CardContent>
+      </Link>
+    </Card>
   )
 }
