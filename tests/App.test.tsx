@@ -1,15 +1,11 @@
-import { beforeEach, describe, expect, test } from 'vitest'
-import { cleanup, fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, test } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
 import App from '@/App'
 import { getCurrentPath } from '@/utils/utils'
 import { routesConfig } from '@/routes/router'
 
 describe('App routes', () => {
-  beforeEach(() => {
-    cleanup()
-  })
-
   test('should render without problems', () => {
     render(<App />)
 
