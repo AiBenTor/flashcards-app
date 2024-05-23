@@ -4,6 +4,7 @@ import { DeleteButton } from './DeleteButton'
 import { COLOR } from '@/utils/consts'
 
 interface Props {
+  id: `${string}-${string}-${string}-${string}-${string}`
   title: string
   description: string
   newCards: number
@@ -11,13 +12,13 @@ interface Props {
   scheduledCards: number
 }
 
-export const Deck: React.FC<Props> = ({ title, description, newCards, learningCards, scheduledCards }) => {
+export const Deck: React.FC<Props> = ({ id, title, description, newCards, learningCards, scheduledCards }) => {
   const titleShort = `${title.substring(0, 20)}${title.length > 20 ? '...' : ''}`
   const descriptionShort = `${description.substring(0, 65)}${description.length > 66 ? '...' : ''}`
 
   return (
     <Card sx={{ height: 175, width: 350, padding: '5%' }}>
-      <Link to={'/'} style={{ color: COLOR.BLUE_DARK, textDecoration: 'none' }}>
+      <Link to={`/decks/${id}`} style={{ color: COLOR.BLUE_DARK, textDecoration: 'none' }}>
         <CardHeader title={titleShort} action={<DeleteButton />} />
         <CardContent>
           <Typography variant="body1" color="text.secondary" overflow="hidden" textOverflow="ellipsis" sx={{ mb: 2 }}>

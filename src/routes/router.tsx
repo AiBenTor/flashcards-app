@@ -2,6 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 import { HomePage } from '@/pages/HomePage'
 import { DecksPage } from '@/pages/DecksPage'
 import { PageLayout } from '@/layouts/PageLayout'
+import { DeckPage } from '@/pages/DeckPage'
+import { loader as deckLoader } from './deck'
 
 export const routesConfig = [
   {
@@ -14,6 +16,11 @@ export const routesConfig = [
         path: '/decks',
         element: <DecksPage />,
       },
+      {
+        path: '/decks/:deckId',
+        element: <DeckPage />,
+        loader: deckLoader
+      }
     ],
   },
 ]
