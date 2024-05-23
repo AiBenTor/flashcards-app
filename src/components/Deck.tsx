@@ -2,22 +2,14 @@ import { Link } from 'react-router-dom'
 import { Card, CardContent, CardHeader, Typography } from '@mui/material'
 import { DeleteButton } from './DeleteButton'
 import { COLOR } from '@/utils/consts'
+import { Deck as DeckType } from '@/types/deck'
 
-interface Props {
-  id: `${string}-${string}-${string}-${string}-${string}`
-  title: string
-  description: string
-  newCards: number
-  learningCards: number
-  scheduledCards: number
-}
-
-export const Deck: React.FC<Props> = ({ id, title, description, newCards, learningCards, scheduledCards }) => {
+export const Deck: React.FC<DeckType> = ({ id, title, description, newCards, learningCards, scheduledCards }) => {
   const titleShort = `${title.substring(0, 20)}${title.length > 20 ? '...' : ''}`
   const descriptionShort = `${description.substring(0, 65)}${description.length > 66 ? '...' : ''}`
 
   return (
-    <Card sx={{ height: 175, width: 350, padding: '5%' }}>
+    <Card sx={{ height: 175, width: 350, padding: 2 }}>
       <Link to={`/decks/${id}`} style={{ color: COLOR.BLUE_DARK, textDecoration: 'none' }}>
         <CardHeader title={titleShort} action={<DeleteButton />} />
         <CardContent>

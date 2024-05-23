@@ -1,31 +1,24 @@
 import { Deck } from '@/components/Deck'
+import { getAllDecks } from '@/utils/decks'
+import '@/styles/decksPage.scss'
 
 export const DecksPage = () => {
-  const id = crypto.randomUUID()
-  const title = 'Verbs fdksalfñjdsalkfñjdksalfdjsaklfñdjaskfldsañjfkdalfñjdklañ'
-  const description = `fdafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdsafsafdsafdsa
-  fdafdafdasfdas`
-  const newCards = 2
-  const learningCards = 3
-  const scheduledCards = 2
-
   return (
-    <section>
+    <>
       <h1>DecksPage</h1>
-      <Deck
-        id={id}
-        title={title}
-        description={description}
-        newCards={newCards}
-        learningCards={learningCards}
-        scheduledCards={scheduledCards}
-      />
-    </section>
+      <div className='decks-container'>
+        {getAllDecks().map((deck) => (
+          <Deck
+            key={deck.id}
+            id={deck.id}
+            title={deck.title}
+            description={deck.description}
+            newCards={deck.newCards}
+            learningCards={deck.learningCards}
+            scheduledCards={deck.scheduledCards}
+          />
+        ))}
+      </div>
+    </>
   )
 }

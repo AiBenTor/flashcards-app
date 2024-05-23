@@ -19,8 +19,11 @@ body {
 
 .app {
   background-color: palette.$color__base-light;
+  display: flex;
+  flex-direction: column;
   font-family: 'Roboto';
   height: 100%;
+  justify-content: space-between;
 
   &.dark {
     background-color: palette.$color__gray-dark;
