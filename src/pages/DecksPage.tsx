@@ -1,15 +1,15 @@
 import { Deck } from '@/components/Deck'
-import { getAllDecks } from '@/utils/decks'
 import '@/styles/decksPage.scss'
 import { Fab } from '@mui/material'
 import { Add } from '@mui/icons-material'
-import { useState } from 'react'
 import { Deck as DeckType } from '@/types/deck'
+import { useDecks } from '@/hooks/useDecks'
 
 export const DecksPage = () => {
-  const [ decks, setDecks ] = useState(getAllDecks())
+  // const [ decks, setDecks ] = useState(getAllDecks())
+  const { decks, addNewDeck } = useDecks()
 
-  const addDeck = () => {
+  const handleAddDeck = () => {
     const newDeck: DeckType = {
       id: crypto.randomUUID(),
       title: 'New Deck',
@@ -19,7 +19,8 @@ export const DecksPage = () => {
       scheduledCards: 2,
     }
 
-    setDecks([ ...decks, newDeck ])
+    // setDecks([ ...decks, newDeck ])
+    addNewDeck(newDeck)
   }
 
   return (
@@ -38,7 +39,12 @@ export const DecksPage = () => {
           />
         ))}
       </div>
-      <Fab color="primary" aria-label="add" sx={{ position: 'fixed', right: '7%', bottom: '10%' }} onClick={addDeck}>
+      <Fab
+        color="primary"
+        aria-label="add"
+        sx={{ position: 'fixed', right: '7%', bottom: '10%' }}
+        onClick={handleAddDeck}
+      >
         <Add />
       </Fab>
     </>
