@@ -8,10 +8,8 @@ export const decksSlice = createSlice({
   name: 'decks',
   initialState,
   reducers: {
-    // addDeck: (state, action: PayloadAction<Deck>) => {
     addDeck: (state, { payload }: { payload: Deck }) => {
-      // state = [ ...state, action.payload ]
-      state = [ ...state, payload ]
+      state.push(payload)
     },
   },
 })

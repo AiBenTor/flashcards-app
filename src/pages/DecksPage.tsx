@@ -1,13 +1,12 @@
 import { Deck } from '@/components/Deck'
-import '@/styles/decksPage.scss'
 import { Fab } from '@mui/material'
 import { Add } from '@mui/icons-material'
 import { Deck as DeckType } from '@/types/deck'
 import { useDecks } from '@/hooks/useDecks'
+import '@/styles/decksPage.scss'
 
 export const DecksPage = () => {
-  // const [ decks, setDecks ] = useState(getAllDecks())
-  const { decks, addNewDeck } = useDecks()
+  const { decks, addDeck } = useDecks()
 
   const handleAddDeck = () => {
     const newDeck: DeckType = {
@@ -19,8 +18,7 @@ export const DecksPage = () => {
       scheduledCards: 2,
     }
 
-    // setDecks([ ...decks, newDeck ])
-    addNewDeck(newDeck)
+    addDeck(newDeck)
   }
 
   return (
