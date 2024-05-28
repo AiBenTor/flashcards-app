@@ -1,4 +1,4 @@
-import { addDeck as addDeckSlice } from '@/store/decksSlice'
+import { addDeck as addDeckSlice, deleteDeck as deleteDeckSlice } from '@/store/decksSlice'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { Deck as DeckType } from '@/types/deck'
 
@@ -10,8 +10,13 @@ export const useDecks = () => {
     dispatch(addDeckSlice(newDeck))
   }
 
+  const deleteDeck = (idDeck: DeckType['id']) => {
+    dispatch(deleteDeckSlice(idDeck))
+  }
+
   return {
     decks,
     addDeck,
+    deleteDeck,
   }
 }

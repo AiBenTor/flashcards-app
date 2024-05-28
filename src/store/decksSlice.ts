@@ -11,10 +11,17 @@ export const decksSlice = createSlice({
     addDeck: (state, { payload }: { payload: Deck }) => {
       state.push(payload)
     },
+    deleteDeck: (state, { payload }: { payload: Deck['id'] }) => {
+      const deckToDelete = state.find((deck) => deck.id === payload)
+
+      if (deckToDelete !== undefined) {
+        state.splice(state.indexOf(deckToDelete), 1)
+      }
+    },
   },
 })
 
-export const { addDeck } = decksSlice.actions
+export const { addDeck, deleteDeck } = decksSlice.actions
 
 const decksReducer = decksSlice.reducer
 export default decksReducer

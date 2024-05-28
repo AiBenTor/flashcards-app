@@ -6,7 +6,7 @@ import { useDecks } from '@/hooks/useDecks'
 import '@/styles/decksPage.scss'
 
 export const DecksPage = () => {
-  const { decks, addDeck } = useDecks()
+  const { decks, addDeck, deleteDeck } = useDecks()
 
   const handleAddDeck = () => {
     const newDeck: DeckType = {
@@ -21,20 +21,16 @@ export const DecksPage = () => {
     addDeck(newDeck)
   }
 
+  const handleDeleteDeck = (idDeck: DeckType['id']) => {
+    deleteDeck(idDeck)
+  }
+
   return (
     <>
       <h1>DecksPage</h1>
       <div className="decks-container">
         {decks.map((deck) => (
-          <Deck
-            key={deck.id}
-            id={deck.id}
-            title={deck.title}
-            description={deck.description}
-            newCards={deck.newCards}
-            learningCards={deck.learningCards}
-            scheduledCards={deck.scheduledCards}
-          />
+          <Deck key={deck.id} deck={deck} handleDeleteDeck={handleDeleteDeck} />
         ))}
       </div>
       <Fab

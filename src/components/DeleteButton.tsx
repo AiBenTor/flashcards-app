@@ -1,7 +1,11 @@
 import { IconButton } from '@mui/material'
 import { Delete } from '@mui/icons-material'
 
-export const DeleteButton = () => {
+interface Props {
+  handleDelete: () => void
+}
+
+export const DeleteButton: React.FC<Props> = ({ handleDelete }) => {
   return (
     <IconButton
       onTouchStart={(event) => event.stopPropagation()}
@@ -9,7 +13,7 @@ export const DeleteButton = () => {
       onClick={(event) => {
         event.stopPropagation()
         event.preventDefault()
-        console.log('DELETE DECK')
+        handleDelete()
       }}
     >
       <Delete />
