@@ -1,9 +1,12 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, renderHook, screen } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 import { Deck } from '@/components/Deck'
 import { Deck as DeckType } from '@/types/deck'
 import { getCurrentPath } from '@/utils/utils'
+import { useDecks } from '@/hooks/useDecks'
+import { Provider } from 'react-redux'
+import { store } from '@/store/store'
 
 describe('Deck component', () => {
   const deckTest: DeckType = {
@@ -14,19 +17,21 @@ describe('Deck component', () => {
     learningCards: 8,
     scheduledCards: 10,
   }
+  const wrapper = ({ children }: { children: React.ReactNode }) => {
+    return <Provider store={store}>{children}</Provider>
+  }
 
   beforeEach(() => {
+    const { result } = renderHook(() => useDecks(), { wrapper })
+    const handleDeleteDeckTest = (idDeck: DeckType['id']) => {
+      result.current.deleteDeck(idDeck)
+    }
     render(
-      <BrowserRouter>
-        <Deck
-          id={deckTest.id}
-          title={deckTest.title}
-          description={deckTest.description}
-          newCards={deckTest.newCards}
-          learningCards={deckTest.learningCards}
-          scheduledCards={deckTest.scheduledCards}
-        />
-      </BrowserRouter>,
+      <Provider store={store}>
+        <BrowserRouter>
+          <Deck deck={deckTest} handleDeleteDeck={handleDeleteDeckTest} />
+        </BrowserRouter>
+      </Provider>,
     )
   })
 

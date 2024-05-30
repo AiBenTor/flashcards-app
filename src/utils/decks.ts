@@ -52,12 +52,4 @@ const DECKS_TEST: Deck[] = [
     learningCards: 3,
     scheduledCards: 2,
   },
-  {
-    id: '2ff52616-5c59-42e1-88ee-16050013f5c7',
-    title: 'Colors 4',
-    description: 'English Colors 4',
-    newCards: 2,
-    learningCards: 3,
-    scheduledCards: 2,
-  },
 ]
