@@ -28,11 +28,13 @@ export const DecksPage = () => {
   return (
     <>
       <h1>DecksPage</h1>
-      <div className="decks-container">
+      <ul className="decks-container">
         {decks.map((deck) => (
-          <Deck key={deck.id} deck={deck} handleDeleteDeck={handleDeleteDeck} />
+          <li key={deck.id} role='deckContainer'>
+            <Deck deck={deck} handleDeleteDeck={handleDeleteDeck} />
+          </li>
         ))}
-      </div>
+      </ul>
       <Fab
         color="primary"
         aria-label="add"
