@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vitest && tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prettier": "npx prettier . --write",
+    "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "npm run prettier && npm run lint",
     "preview": "vite preview",
     "test": "vitest watch"
   },
