@@ -30,7 +30,7 @@ export const DecksPage = () => {
       <h1>DecksPage</h1>
       <ul className="decks-container">
         {decks.map((deck) => (
-          <li key={deck.id} role='deckContainer'>
+          <li key={deck.id} role="deckContainer">
             <Deck deck={deck} handleDeleteDeck={handleDeleteDeck} />
           </li>
         ))}

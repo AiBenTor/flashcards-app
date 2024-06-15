@@ -11,7 +11,7 @@ The main language of the repository is English.
 
 ## Branches
 
-The repository has three branches: 
+The repository has three branches:
 
 - `main`: The production code branch.
 - `develop`: The develop code branch.

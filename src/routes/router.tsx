@@ -19,8 +19,8 @@ export const routesConfig = [
       {
         path: '/decks/:deckId',
         element: <DeckPage />,
-        loader: deckLoader
-      }
+        loader: deckLoader,
+      },
     ],
   },
 ]

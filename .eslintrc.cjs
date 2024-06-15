@@ -10,36 +10,18 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
-    quotes: [
-      'error',
-      'single'
-    ],
-    semi: [
-      'error',
-      'never'
-    ],
-    'array-bracket-spacing': [
-      'error',
-      'always'
-    ],
-    'object-curly-spacing': [
-      'error',
-      'always'
-    ],
-    'computed-property-spacing': [
-      'error',
-      'always'
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    quotes: ['error', 'single'],
+    semi: ['error', 'never'],
+    'array-bracket-spacing': ['error', 'always'],
+    'object-curly-spacing': ['error', 'always'],
+    'computed-property-spacing': ['error', 'always'],
     'no-multiple-empty-lines': [
       'error',
       {
-        'max': 2,
-        'maxEOF': 0
-      }
-    ]
+        max: 2,
+        maxEOF: 0,
+      },
+    ],
   },
 }

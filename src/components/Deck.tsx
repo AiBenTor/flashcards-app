@@ -5,7 +5,7 @@ import { COLOR } from '@/utils/consts'
 import { Deck as DeckType } from '@/types/deck'
 
 interface Props {
-  deck: DeckType,
+  deck: DeckType
   handleDeleteDeck: (id: DeckType['id']) => void
 }
 
@@ -23,7 +23,13 @@ export const Deck: React.FC<Props> = ({ deck, handleDeleteDeck }) => {
       <Link to={`/decks/${id}`} style={{ color: COLOR.BLUE_DARK, textDecoration: 'none' }}>
         <CardHeader title={titleShort} action={<DeleteButton handleDelete={handleDelete} />} />
         <CardContent>
-          <Typography variant="body1" color="text.secondary" overflow="hidden" textOverflow="ellipsis" sx={{ mb: 2 }}>
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            overflow="hidden"
+            textOverflow="ellipsis"
+            sx={{ mb: 2 }}
+          >
             {descriptionShort}
           </Typography>
           <Typography variant="body2" sx={{ height: 30 }}>
