@@ -1,0 +1,25 @@
+.mobile-menu {
+  background-color: palette.$color__blue-light;
+  display: grid;
+  height: 100%;
+  place-items: center;
+  position: absolute;
+  width: 100%;
+
+  .dark & {
+    background-color: palette.$color__black;
+  }
+}
+
+.mobile-menu__close {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+.mobile-menu__links {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

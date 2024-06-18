@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { HeaderButton } from './HeaderButton'
+import { useMobileMenu } from '@/hooks/useMobileMenu'
 
 interface Props {
   text: string
@@ -7,9 +8,11 @@ interface Props {
 }
 
 export const LinkButton: React.FC<Props> = ({ text, url }) => {
+  const { closeMenu } = useMobileMenu()
+
   return (
     <Link to={url}>
-      <HeaderButton text={text} />
+      <HeaderButton text={text} handleClick={closeMenu} />
     </Link>
   )
 }

@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import decksReducer from './decksSlice'
+import mobileMenuReducer from './mobileMenuSlice'
 import themeReducer from './themeSlice'
 
 export const store = configureStore({
   reducer: {
     decks: decksReducer,
+    mobileMenu: mobileMenuReducer,
     theme: themeReducer,
   },
 })
