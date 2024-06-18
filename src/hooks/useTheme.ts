@@ -35,9 +35,16 @@ export const useTheme = () => {
     document.body.classList.add('dark')
   }
 
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setDarkTheme()
+    } else {
+      setLightTheme()
+    }
+  }
+
   return {
     theme,
-    setLightTheme,
-    setDarkTheme,
+    toggleTheme,
   }
 }

@@ -4,22 +4,14 @@ import { ThemeButton } from './ThemeButton'
 import { MenuButton } from './MenuButton'
 
 export const Header = () => {
-  const { theme, setDarkTheme, setLightTheme } = useTheme()
-
-  const handleClick = () => {
-    if (theme === 'light') {
-      setDarkTheme()
-    } else {
-      setLightTheme()
-    }
-  }
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <header className="header">
       <div className="header__container--web">
         <LinkButton url="/" text="Home" theme={theme} />
         <LinkButton url="/decks" text="My Decks" theme={theme} />
-        <ThemeButton theme={theme} handleClick={handleClick} />
+        <ThemeButton theme={theme} handleClick={toggleTheme} />
       </div>
 
       <div className="header__container--mobile">
