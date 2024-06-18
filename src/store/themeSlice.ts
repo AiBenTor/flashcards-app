@@ -1,5 +1,5 @@
+import { getTheme } from '@/utils/theme'
 import { createSlice } from '@reduxjs/toolkit'
-import { getTheme } from '@/utils/utils'
 
 interface themeState {
   value: 'light' | 'dark'
