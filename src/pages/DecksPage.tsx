@@ -3,7 +3,6 @@ import { Fab } from '@mui/material'
 import { Add } from '@mui/icons-material'
 import { Deck as DeckType } from '@/types/deck'
 import { useDecks } from '@/hooks/useDecks'
-import '@/styles/decksPage.scss'
 
 export const DecksPage = () => {
   const { decks, addDeck, deleteDeck } = useDecks()

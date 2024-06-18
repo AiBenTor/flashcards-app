@@ -1,5 +1,4 @@
 import { FooterLink } from './FooterLink'
-import '@/styles/footer.scss'
 
 export const Footer = () => {
   return (

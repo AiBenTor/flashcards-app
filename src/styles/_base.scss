@@ -1,4 +1,8 @@
 @use 'palette.module';
+@import './decksPage.scss';
+@import './footer.scss';
+@import './header.scss';
+@import './pageLayout.scss';
 
 body {
   background-color: palette.$color__base-light;
