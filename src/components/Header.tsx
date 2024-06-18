@@ -1,7 +1,7 @@
-import { Stack } from '@mui/material'
 import { useTheme } from '@/hooks/useTheme'
 import { LinkButton } from './LinkButton'
 import { ThemeButton } from './ThemeButton'
+import { MenuButton } from './MenuButton'
 
 export const Header = () => {
   const { theme, setDarkTheme, setLightTheme } = useTheme()
@@ -16,11 +16,15 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <Stack direction="row" spacing={2}>
+      <div className="header__container--web">
         <LinkButton url="/" text="Home" theme={theme} />
         <LinkButton url="/decks" text="My Decks" theme={theme} />
         <ThemeButton theme={theme} handleClick={handleClick} />
-      </Stack>
+      </div>
+
+      <div className="header__container--mobile">
+        <MenuButton theme={theme} />
+      </div>
     </header>
   )
 }
