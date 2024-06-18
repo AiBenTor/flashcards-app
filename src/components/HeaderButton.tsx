@@ -1,15 +1,16 @@
 import { ReactNode } from 'react'
 import { Button, styled } from '@mui/material'
 import { COLOR } from '@/utils/consts'
+import { useTheme } from '@/hooks/useTheme'
 
 interface Props {
   children?: ReactNode
   text?: string
-  theme: 'light' | 'dark'
   handleClick?: () => void
 }
 
-export const HeaderButton: React.FC<Props> = ({ children, text = '', theme, handleClick }) => {
+export const HeaderButton: React.FC<Props> = ({ children, text = '', handleClick }) => {
+  const { theme } = useTheme()
   const CustomButton = styled(Button)({
     color: theme === 'light' ? COLOR.BLACK : COLOR.BLUE_LIGHT,
     '&:hover': {

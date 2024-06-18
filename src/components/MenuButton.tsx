@@ -1,13 +1,9 @@
 import MenuIcon from '@mui/icons-material/Menu'
 import { HeaderButton } from './HeaderButton'
 
-interface Props {
-  theme: 'light' | 'dark'
-}
-
-export const MenuButton: React.FC<Props> = ({ theme }) => {
+export const MenuButton = () => {
   return (
-    <HeaderButton theme={theme}>
+    <HeaderButton>
       <MenuIcon />
     </HeaderButton>
   )

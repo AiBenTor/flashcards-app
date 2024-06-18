@@ -1,23 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import { setDark, setLight } from '@/store/themeSlice'
 
 export const useTheme = () => {
-  const [ theme, setTheme ] = useState<'light' | 'dark'>('light')
-
-  useEffect(() => {
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme') !== null) {
-      if (localStorage.getItem('theme') === 'light') {
-        setLightTheme()
-      } else {
-        setDarkTheme()
-      }
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDarkTheme()
-    }
-  }, [])
+  const { value: theme } = useAppSelector((state) => state.theme)
+  const dispatch = useAppDispatch()
 
   const setLightTheme = () => {
     const lightTheme = 'light'
-    setTheme(lightTheme)
+    dispatch(setLight())
     localStorage.setItem('theme', lightTheme)
 
     // Change Styles
@@ -27,7 +17,7 @@ export const useTheme = () => {
 
   const setDarkTheme = () => {
     const darkTheme = 'dark'
-    setTheme(darkTheme)
+    dispatch(setDark())
     localStorage.setItem('theme', darkTheme)
 
     // Change Styles
