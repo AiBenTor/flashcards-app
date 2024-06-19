@@ -1,9 +1,11 @@
 import { describe, expect, test } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
 import { RouterProvider, createMemoryRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
 import App from '@/App'
 import { getCurrentPath } from '@/utils/utils'
 import { routesConfig } from '@/routes/router'
+import { store } from '@/store/store'
 
 describe('App routes', () => {
   test('should render without problems', () => {
@@ -31,7 +33,11 @@ describe('App routes', () => {
     const routerTest = createMemoryRouter(routesConfig, {
       initialEntries: [ badRoute ],
     })
-    render(<RouterProvider router={routerTest} />)
+    render(
+      <Provider store={store}>
+        <RouterProvider router={routerTest} />
+      </Provider>,
+    )
 
     expect(screen.getByText(/Oops/)).toBeTruthy()
   })
