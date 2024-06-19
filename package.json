@@ -10,7 +10,8 @@
     "lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "npm run prettier && npm run lint",
     "preview": "vite preview",
-    "test": "vitest watch"
+    "test": "vitest watch",
+    "host": "vite --host"
   },
   "author": "Aitor Melero",
   "license": "MIT",
